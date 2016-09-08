@@ -18,4 +18,4 @@ tree.export_graphviz(classifier,
                                 filled=True, rounded=True,
                                 impurity=False)
 graphs = pydot.graph_from_dot_data(dot_data.getvalue())
-graphs.write_pdf('pdf/hello-world.pdf')
+graphs.write_pdf('pdf/helloworld.pdf')
