@@ -18,3 +18,15 @@ classifier = classifier.fit(training_data, training_target)
 
 print(test_target)
 print(classifier.predict(test_data))
+
+from sklearn.externals.six import StringIO
+import pydotplus as pydot
+dot_data = StringIO()
+tree.export_graphviz(classifier,
+                                out_file=dot_data,
+                                feature_names=iris.feature_names,
+                                class_names=iris.target_names,
+                                filled=True, rounded=True,
+                                impurity=False)
+graph = pydot.graph_from_dot_data(dot_data.getvalue())
+graph.write_pdf('pdf/iris.pdf')
