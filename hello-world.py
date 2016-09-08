@@ -11,6 +11,11 @@ print(classifier.predict([[160, 0]]))
 from sklearn.externals.six import StringIO
 import pydotplus as pydot
 dot_data = StringIO()
-tree.export_graphviz(classifier, out_file=dot_data)
+tree.export_graphviz(classifier,
+                                out_file=dot_data,
+                                feature_names=['weight', 'smooth'],
+                                class_names=['apple', 'orange'],
+                                filled=True, rounded=True,
+                                impurity=False)
 graphs = pydot.graph_from_dot_data(dot_data.getvalue())
-graphs.write_pdf("hello-world.pdf")
+graphs.write_pdf('hello-world.pdf')
