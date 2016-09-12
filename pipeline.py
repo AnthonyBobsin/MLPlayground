@@ -38,9 +38,6 @@ y = iris.target
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.5)
 
-# from sklearn.neighbors import KNeighborsClassifier
-# classifier = KNeighborsClassifier()
-
 classifier = ScrappyKNN()
 
 classifier.fit(X_train, y_train)
